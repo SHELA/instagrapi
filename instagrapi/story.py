@@ -9,10 +9,10 @@ try:
 except ImportError:
     raise Exception("Please install moviepy==1.0.3 and retry")
 
-try:
-    from PIL import Image
-except ImportError:
-    raise Exception("You don't have PIL installed. Please install PIL or Pillow>=8.1.1")
+# try:
+#     from PIL import Image
+# except ImportError:
+#     raise Exception("You don't have PIL installed. Please install PIL or Pillow>=8.1.1")
 
 
 class StoryBuilder:
