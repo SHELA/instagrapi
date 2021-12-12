@@ -11,10 +11,10 @@ from instagrapi.extractors import extract_media_v1
 from instagrapi.types import Location, Media, Usertag
 from instagrapi.utils import date_time_original
 
-try:
-    from PIL import Image
-except ImportError:
-    raise Exception("You don't have PIL installed. Please install PIL or Pillow>=8.1.1")
+# try:
+#     from PIL import Image
+# except ImportError:
+#     raise Exception("You don't have PIL installed. Please install PIL or Pillow>=8.1.1")
 
 
 class DownloadClipMixin:
