@@ -30,10 +30,10 @@ from instagrapi.types import (
 )
 from instagrapi.utils import date_time_original, dumps
 
-try:
-    from PIL import Image
-except ImportError:
-    raise Exception("You don't have PIL installed. Please install PIL or Pillow>=8.1.1")
+# try:
+#     from PIL import Image
+# except ImportError:
+#     raise Exception("You don't have PIL installed. Please install PIL or Pillow>=8.1.1")
 
 
 class DownloadPhotoMixin:
