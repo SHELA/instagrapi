@@ -553,6 +553,7 @@ class MediaMixin:
                 f"feed/user/{user_id}/",
                 params={
                     "max_id": next_max_id,
+                    "count": 1000,
                     "min_timestamp": min_timestamp,
                     "rank_token": self.rank_token,
                     "ranked_content": "true",
@@ -560,10 +561,11 @@ class MediaMixin:
             )["items"]
         except Exception as e:
             self.logger.exception(e)
-            return None
+            return [], None
         medias.extend(items)
         next_max_id = self.last_json.get("next_max_id", "")
-        medias = medias[:amount]
+        if amount:
+            medias = medias[:amount]
         return (
             [extract_media_v1(media) for media in medias],
             next_max_id
@@ -588,7 +590,6 @@ class MediaMixin:
         user_id = int(user_id)
         medias = []
         next_max_id = ""
-        min_timestamp = None
         while True:
             try:
                 medias_page, next_max_id = self.user_medias_paginated_v1(

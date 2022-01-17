@@ -91,6 +91,14 @@ class ChallengeRequired(ChallengeError):
     pass
 
 
+class ChallengeSelfieCaptcha(ChallengeError):
+    pass
+
+
+class ChallengeUnknownStep(ChallengeError):
+    pass
+
+
 class SelectContactPointRecoveryForm(ChallengeError):
     pass
 
@@ -215,7 +223,6 @@ class IGTVConfigureError(IGTVNotUpload):
     pass
 
 
-
 class ClipNotUpload(PrivateError):
     pass
 
@@ -233,10 +240,6 @@ class AlbumUnknownFormat(PrivateError):
 
 
 class AlbumConfigureError(PrivateError):
-    pass
-
-
-class StoryNotFound(MediaNotFound):
     pass
 
 
